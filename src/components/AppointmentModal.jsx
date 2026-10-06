@@ -1,18 +1,23 @@
+
 import { useState } from 'react'
 import { X, Calendar, Clock, User, Phone, Mail, MessageSquare } from 'lucide-react'
-import { doctors, services } from '../data/clientData'
+import { doctors, services } from '../clientdata'
 
-const AppointmentModal = ({ isOpen, onClose }) => {
+const AppointmentModal = ({
+  isOpen,
+  onClose,
+  selectedDoctor,
+}) => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    doctor: '',
-    date: '',
-    time: '',
-    message: ''
-  })
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    doctor: selectedDoctor?.name || "",
+    date: "",
+    time: "",
+    message: "",
+  });
 
   const [isSubmitted, setIsSubmitted] = useState(false)
 
@@ -244,7 +249,7 @@ const AppointmentModal = ({ isOpen, onClose }) => {
               </button>
 
               <p className="text-xs text-gray-500 text-center">
-                By submitting this form, you agree to our terms and privacy policy. 
+                By submitting this form, you agree to our terms and privacy policy.
                 We'll contact you to confirm your appointment.
               </p>
             </form>
