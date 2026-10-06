@@ -1,5 +1,5 @@
 import { Star, Quote } from 'lucide-react'
-import { testimonials } from '../data/testimonials'
+import { testimonials } from '../data/clientData'
 
 const Testimonials = () => {
   return (
